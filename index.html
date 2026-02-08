@@ -2,88 +2,111 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Vyuha Intelligence | OSINT Dashboard</title>
+  <title>Vyuha Intelligence | OSINT Platform</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-  <!-- Leaflet Map -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="dark">
+<body>
 
 <header>
   <div class="logo">
-    <i class="fa-solid fa-shield-halved"></i> VyuhaInt
+    <i class="fa-solid fa-shield-halved"></i> Vyuha Intelligence
   </div>
 
   <nav>
-    <a href="#dashboard">Dashboard</a>
-    <a href="#map">World Intel</a>
-    <a href="#video">Explainer</a>
-
-    <button class="theme-toggle" onclick="toggleTheme()">
-      <i class="fa-solid fa-moon"></i>
-    </button>
+    <button onclick="showTab('dashboard')">Dashboard</button>
+    <button onclick="showTab('world')">World Intel</button>
+    <button onclick="showTab('explainer')">Explainer</button>
+    <button onclick="showTab('contact')">Contact</button>
   </nav>
 </header>
 
-<!-- DASHBOARD -->
-<section id="dashboard" class="dashboard">
-  <h1>OSINT Intelligence Dashboard</h1>
+<main>
 
-  <div class="stats">
-    <div class="stat-card">
-      <i class="fa-solid fa-user-secret"></i>
-      <h2>1,248</h2>
-      <p>Digital Profiles Tracked</p>
+  <!-- DASHBOARD -->
+  <section id="dashboard" class="tab active">
+    <h1>OSINT Intelligence Dashboard</h1>
+
+    <div class="cards">
+      <div class="card">
+        <i class="fa-solid fa-user-secret"></i>
+        <h2>1,248</h2>
+        <p>Digital Profiles Tracked</p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-globe"></i>
+        <h2>67</h2>
+        <p>Countries Observed</p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-database"></i>
+        <h2>9.3 TB</h2>
+        <p>Public Data Indexed</p>
+      </div>
+
+      <div class="card alert">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <h2>14</h2>
+        <p>Active Intelligence Alerts</p>
+      </div>
     </div>
+  </section>
 
-    <div class="stat-card">
-      <i class="fa-solid fa-globe"></i>
-      <h2>67</h2>
-      <p>Countries Observed</p>
+  <!-- WORLD INTEL -->
+  <section id="world" class="tab">
+    <h1>World Intelligence Overview</h1>
+
+    <div class="world-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" class="world-img">
+
+      <div class="world-text">
+        <p>
+          Global OSINT monitoring across telecom metadata, public infrastructure,
+          aviation, maritime traffic, and digital footprints.
+        </p>
+
+        <ul>
+          <li><i class="fa-solid fa-satellite"></i> Satellite & AIS Monitoring</li>
+          <li><i class="fa-solid fa-network-wired"></i> Network Metadata Analysis</li>
+          <li><i class="fa-solid fa-eye"></i> Surveillance Pattern Detection</li>
+        </ul>
+      </div>
     </div>
+  </section>
 
-    <div class="stat-card">
-      <i class="fa-solid fa-database"></i>
-      <h2>9.3 TB</h2>
-      <p>Public Data Indexed</p>
+  <!-- EXPLAINER -->
+  <section id="explainer" class="tab">
+    <h1>OSINT Explained</h1>
+
+    <div class="video-box">
+      <iframe src="https://www.youtube.com/embed/XEmIlyJmVQo" allowfullscreen></iframe>
     </div>
+  </section>
 
-    <div class="stat-card alert">
-      <i class="fa-solid fa-triangle-exclamation"></i>
-      <h2>14</h2>
-      <p>Active Intelligence Alerts</p>
+  <!-- CONTACT -->
+  <section id="contact" class="tab">
+    <h1>Contact & Collaboration</h1>
+
+    <div class="contact-box">
+      <p><i class="fa-solid fa-envelope"></i> contact@vyuhaintelligence.com</p>
+      <p><i class="fa-solid fa-location-dot"></i> India | Global Operations</p>
+      <p><i class="fa-solid fa-shield"></i> Defense • Intelligence • Research</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- MAP -->
-<section id="map" class="map-section">
-  <h2>🌍 World Intelligence Heatmap</h2>
-  <div id="worldMap"></div>
-</section>
-
-<!-- VIDEO -->
-<section id="video" class="video-section">
-  <h2>OSINT Explained</h2>
-  <iframe
-    src="https://www.youtube.com/embed/XEmIlyJmVQo"
-    allowfullscreen>
-  </iframe>
-</section>
+</main>
 
 <footer>
-  <p>© 2026 Vyuha Intelligence</p>
+  © 2026 Vyuha Intelligence
 </footer>
 
-<!-- Scripts -->
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

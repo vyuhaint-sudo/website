@@ -1,118 +1,130 @@
-:root {
-  --bg-dark: #0b0f1a;
-  --bg-light: #f4f6fa;
-  --card-dark: #1a203c;
-  --card-light: #ffffff;
-  --text-dark: #ffffff;
-  --text-light: #111;
-  --accent: #4fd1c5;
-}
-
-body.dark {
-  background: var(--bg-dark);
-  color: var(--text-dark);
-}
-
-body.light {
-  background: var(--bg-light);
-  color: var(--text-light);
-}
-
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
+  background: #071425;
+  color: #ffffff;
 }
 
+/* WATERMARK */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg")
+              no-repeat center;
+  background-size: 70%;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 16px 32px;
-  background: #11162a;
-  position: sticky;
-  top: 0;
+  background: #050e1a;
+  border-bottom: 1px solid #0e2a47;
 }
 
 .logo {
   font-size: 22px;
-  color: var(--accent);
+  color: #4fd1c5;
 }
 
-nav a {
-  color: white;
-  margin: 0 12px;
-  text-decoration: none;
-}
-
-.theme-toggle {
+nav button {
   background: none;
   border: none;
-  color: var(--accent);
-  font-size: 18px;
+  color: white;
+  margin-left: 20px;
+  font-size: 15px;
   cursor: pointer;
 }
 
+nav button:hover {
+  color: #4fd1c5;
+}
+
+/* MAIN */
+main {
+  padding: 50px;
+}
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
 /* DASHBOARD */
-.dashboard {
-  padding: 60px 20px;
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #0c1f3d;
+  padding: 30px;
+  border-radius: 12px;
   text-align: center;
 }
 
-.stats {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 40px;
+.card i {
+  font-size: 28px;
+  color: #4fd1c5;
 }
 
-.stat-card {
-  background: var(--card-dark);
-  padding: 30px;
-  width: 240px;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.4);
-}
-
-.stat-card i {
-  font-size: 32px;
-  color: var(--accent);
-}
-
-.stat-card.alert {
+.card.alert {
   border: 2px solid #ff4d4d;
 }
 
-/* MAP */
-.map-section {
-  padding: 60px 20px;
-  text-align: center;
+/* WORLD */
+.world-container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
 }
 
-#worldMap {
-  height: 450px;
-  width: 90%;
-  margin: 30px auto;
-  border-radius: 12px;
-  overflow: hidden;
+.world-img {
+  width: 50%;
+  opacity: 0.85;
+}
+
+.world-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.world-text li {
+  margin: 10px 0;
 }
 
 /* VIDEO */
-.video-section {
-  padding: 60px 20px;
-  text-align: center;
+.video-box iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 12px;
 }
 
-iframe {
-  width: 80%;
-  height: 420px;
+/* CONTACT */
+.contact-box {
+  background: #0c1f3d;
+  padding: 30px;
   border-radius: 12px;
+  width: fit-content;
 }
 
 /* FOOTER */
 footer {
-  padding: 20px;
-  background: #11162a;
   text-align: center;
+  padding: 20px;
+  background: #050e1a;
 }
