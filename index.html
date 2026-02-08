@@ -1,37 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Blog | GEOINT & Cyber</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vyuha Intelligence</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-  <h1>Geospatial & Cyber Intelligence</h1>
-  <p>Insights • Awareness • Use Cases</p>
-</header>
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">
+      <i class="fa-solid fa-shield-halved"></i> VyuhaInt
+    </div>
 
-<main>
-  <article>
-    <h2>Why Geospatial Intelligence Matters</h2>
-    <p>
-      Geospatial Intelligence enables decision-makers to understand
-      terrain, movement, infrastructure, and threats using spatial data.
-    </p>
-  </article>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
 
-  <article>
-    <h2>Vlog: GEOINT Explained</h2>
-    <iframe width="560" height="315"
-      src="https://www.youtube.com/embed/XEmIlyJmVQo"
-      allowfullscreen></iframe>
-  </article>
-</main>
+      <!-- DROPDOWN -->
+      <div class="dropdown">
+        <button class="dropbtn">
+          Contact <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="mailto:contact@vyuhaint.com">
+            <i class="fa-solid fa-envelope"></i> Email
+          </a>
+          <a href="tel:+919999999999">
+            <i class="fa-solid fa-phone"></i> Phone
+          </a>
+          <a href="#">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="#">
+            <i class="fa-brands fa-x-twitter"></i> Twitter (X)
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-<footer>
-  <p>© 2026 | Built with GitHub Pages</p>
-</footer>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>Open-Source Intelligence <span>Reimagined</span></h1>
+      <p>
+        Discover how digital footprints, public data, and OSINT techniques
+        empower modern intelligence gathering.
+      </p>
+      <button onclick="scrollToVideo()">Watch Demo</button>
+    </div>
+  </section>
 
+  <!-- VIDEO SECTION -->
+  <section class="video-section" id="video">
+    <h2>OSINT Explained</h2>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/XEmIlyJmVQo"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <h2>What We Do</h2>
+
+    <div class="cards">
+      <div class="card">
+        <i class="fa-solid fa-user-secret"></i>
+        <h3>Digital Footprint Analysis</h3>
+        <p>Track public data trails across platforms legally and ethically.</p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-globe"></i>
+        <h3>Deep & Dark Web</h3>
+        <p>Understand what exists beyond search engines — safely.</p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-video"></i>
+        <h3>Surveillance Awareness</h3>
+        <p>Learn how CCTV, metadata, and sensors impact privacy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Vyuha Intelligence. All rights reserved.</p>
+    <div class="socials">
+      <i class="fa-brands fa-linkedin"></i>
+      <i class="fa-brands fa-github"></i>
+      <i class="fa-brands fa-x-twitter"></i>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
